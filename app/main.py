@@ -54,8 +54,8 @@ async def health() -> dict[str, str]:
     Keep it dependency-free and fast — don't query a DB here unless
     you specifically want a 'readiness' check that fails on DB outage.
     """
-    return {"status": "ok"}
+    return {"status": "mandatory health check passed"}
 
 @app.get("/version")
 async def version():
-    return {"version": "1.0.0", "service": "tasks-api"}
+    return {"name": "tasks-api", "version": "1.0.0", "service": "tasks-api"}
